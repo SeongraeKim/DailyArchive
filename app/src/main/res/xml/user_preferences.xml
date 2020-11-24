@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_baseline_lock_24"
+        android:title="보안 설정">
+
+        <SwitchPreference
+            android:key="fingerprint"
+            app:iconSpaceReserved="false"
+            android:defaultValue="false"
+            android:summaryOn="켜짐"
+            android:summaryOff="꺼짐"
+            android:title="지문인식"/>
+
+        <SwitchPreference
+            android:key="pin"
+            app:iconSpaceReserved="false"
+            android:defaultValue="false"
+            android:summaryOn="켜짐"
+            android:summaryOff="꺼짐"
+            android:title="PIN"/>
+
+        <EditTextPreference
+            android:key="pin_change"
+            android:icon="@drawable/ic_baseline_subdirectory_arrow_right_24"
+            android:dialogTitle="비밀번호 변경"
+            android:title="비밀번호 변경"/>
+    </PreferenceCategory>
+
+    <!-- 데이터 설정 -->
+    <PreferenceCategory
+        android:icon="@drawable/ic_baseline_storage_24"
+        android:title="데이터 관리">
+
+        <Preference
+            android:key="backup_data"
+            app:iconSpaceReserved="false"
+            android:title="데이터 백업"
+            android:summary="/Download 내부에 데이터가 저장됩니다."/>
+
+        <Preference
+            android:key="get_data"
+            app:iconSpaceReserved="false"
+            android:title="데이터 가져오기"
+            android:summary="/Download 내부에 파일을 위치해주세요."/>
+
+        <Preference
+            android:key="clear_data"
+            app:iconSpaceReserved="false"
+            android:title="데이터 초기화"
+            android:summary="작성한 데이터가 제거됩니다."/>
+    </PreferenceCategory>
+
+    <!-- 앱 정보 -->
+    <PreferenceCategory
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="앱 정보">
+
+        <Preference
+            android:key="app_evaluate"
+            app:iconSpaceReserved="false"
+            android:title="앱 평가하기"
+            android:summary="구글플레이 앱 평가하기 화면으로 이동합니다."/>
+
+        <Preference
+            android:key="feedback"
+            app:iconSpaceReserved="false"
+            android:title="피드백 보내기"
+            android:summary="앱에 대해 아쉬운점이나 피드백 사항 있으시면\n메일 보내주세요."/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+// Keystore Security
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "com.ksr.dailyarchive"
+        minSdkVersion 17
+        targetSdkVersion 30
+        versionCode 3
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.android.material:material:1.2.0'                                     // Material Design(Snackbar)
+    implementation 'com.github.applikeysolutions:cosmocalendar:1.0.4'                               // CosmoCalendar
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'                                       // RecyclerView
+    implementation 'androidx.preference:preference:1.1.0'                                           // Preference
+    implementation 'androidx.biometric:biometric:1.0.1'                                             // Biometric
+    implementation 'com.hanks:passcodeview:0.1.2'                                                   // PIN
+    implementation 'gun0912.ted:tedpermission:2.2.3'                                                // TedPermission
+    implementation 'com.google.android.gms:play-services-ads:19.0.1'                                // AdMob
+
+}
