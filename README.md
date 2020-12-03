@@ -2,7 +2,7 @@
 ===================
 
 > ### 앱 설치
-> <a href="https://play.google.com/store/apps/details?id=com.ksr.dailyarchive">01271 :일상 기록.apk</a>
+> <a href="https://play.google.com/store/apps/details?id=com.ksr.dailyarchive">01271 :일상 기록 (구글플레이로 이동)</a>
 
 > ### 설명
 > 일상의 소중한 기억들을 기록할 수 있는 일기장 앱입니다.
